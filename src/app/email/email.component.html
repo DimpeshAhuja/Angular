@@ -1,0 +1,24 @@
+<body>
+
+
+    <div class="container">
+       
+      
+    
+    
+      <form [formGroup]="contact" (ngSubmit)="onSubmit()">
+        <label for="subject">Subject</label>
+        <input id="subject" formControlName="subject" type="text" required />
+    
+        <label for="message">Message</label>
+        <textarea id="message" formControlName="massage" required></textarea>
+    
+        <button type="submit" [disabled]="!contact.valid">Submit</button>
+        <div *ngIf="responseMessage">
+          <p>{{ responseMessage }}</p>
+        </div>
+      </form>
+    <br><br>
+      
+    </div>
+    </body>
